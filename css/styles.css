@@ -71,3 +71,31 @@
   .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
   .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
 }
+
+/* V7 — redes sociales y WhatsApp */
+.social-links{display:flex;align-items:center;justify-content:flex-end;gap:14px}
+.social-links a{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;transition:opacity .2s ease,transform .2s ease}
+.social-links svg{width:20px;height:20px;display:block}
+.social-links a:hover{opacity:.65;transform:translateY(-1px)}
+.whatsapp-float{position:fixed;z-index:70;right:clamp(18px,2.4vw,34px);bottom:clamp(18px,2.4vw,34px);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 7px 24px rgba(0,0,0,.22);transition:transform .2s ease,box-shadow .2s ease}
+.whatsapp-float svg{width:29px;height:29px}.whatsapp-float:hover{transform:translateY(-2px);box-shadow:0 9px 28px rgba(0,0,0,.28)}
+@media(max-width:800px){.social-links{justify-content:center}.whatsapp-float{width:50px;height:50px;right:16px;bottom:18px}.whatsapp-float svg{width:27px;height:27px}}
+
+/* V9 — acceso +18 global corregido */
+body.age-locked{overflow:hidden}
+.age-gate{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:22px;isolation:isolate}
+.age-gate[hidden]{display:none!important}
+.age-gate__backdrop{position:absolute;inset:0;z-index:-1;background:rgba(15,14,11,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.age-gate__panel{position:relative;width:min(92vw,570px);max-height:calc(100svh - 28px);overflow:auto;padding:clamp(38px,6vw,64px) clamp(26px,5vw,58px);background:var(--paper);color:var(--ink);text-align:center;box-shadow:0 24px 70px rgba(0,0,0,.34)}
+.age-gate__logo{width:min(230px,60%);height:auto;filter:none;margin:0 auto 32px;display:block}
+.age-gate__eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:10px;margin:0 0 14px;color:#6b685e}
+.age-gate h2{font-family:var(--display);font-size:clamp(34px,5vw,52px);font-weight:400;font-style:italic;line-height:1.04;margin:0 0 20px}
+.age-gate #ageText{max-width:430px;margin:0 auto 30px;font-size:14px;line-height:1.7;color:#555249}
+.age-gate__actions{display:grid;gap:11px;max-width:390px;margin:0 auto}
+.age-gate__actions button{appearance:none;-webkit-appearance:none;width:100%;min-height:50px;padding:13px 18px;border:1px solid var(--ink);border-radius:0;font-family:var(--body);text-transform:uppercase;letter-spacing:.11em;font-size:10px;cursor:pointer;transition:background .2s,color .2s}
+.age-gate__yes{background:var(--ink);color:#fff}
+.age-gate__yes:hover,.age-gate__yes:focus-visible{background:#35332d}
+.age-gate__no{background:transparent;color:var(--ink)}
+.age-gate__no:hover,.age-gate__no:focus-visible{background:#e6e1d7}
+.age-gate__responsible{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#777268;margin:24px 0 0}
+@media(max-width:480px){.age-gate{padding:14px}.age-gate__panel{width:100%;padding:34px 22px}.age-gate__logo{width:180px;margin-bottom:26px}.age-gate h2{font-size:clamp(32px,10vw,38px)}.age-gate #ageText{font-size:13px;margin-bottom:24px}.age-gate__actions button{min-height:48px}}
