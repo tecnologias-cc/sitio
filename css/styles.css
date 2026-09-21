@@ -27,3 +27,11 @@
 @media(max-width:1100px){.hero{height:78svh;min-height:650px}.hero-copy{max-width:70vw}.track figure{flex-basis:86%}}
 @media(max-width:800px){.hero{height:78svh;min-height:560px;max-height:820px}.hero-copy{left:22px;right:22px;bottom:88px;max-width:none}.hero h1{font-size:clamp(46px,15vw,70px);line-height:.9}.hero-copy p{font-size:18px}.scroll{bottom:20px}.intro{padding-top:72px;padding-bottom:82px}.intro-mark{margin-bottom:18px}.intro h2{font-size:clamp(42px,12vw,62px);line-height:1.02}.intro .lead{font-size:15px;line-height:1.65;margin-bottom:38px}.gallery-shell{display:block;width:calc(100% + 44px);margin-left:-22px;overflow:hidden}.gallery{overflow:hidden}.track{gap:0;transform:none}.track figure{flex:0 0 100%;opacity:1;transform:none}.track img{height:clamp(290px,72vw,470px)}.gbtn{display:none}.gallery-dots{margin-top:18px}.eyebrow{font-size:10px}.intro-mark span{width:64px}}
 @media(max-width:480px){.hero{height:72svh;min-height:540px}.hero>img{object-position:40% center}.hero-copy span{font-size:9px}.hero-copy p{font-size:16px}.intro h2{font-size:clamp(38px,11.5vw,52px)}.track img{height:76vw}}
+
+/* V5 — menú hamburguesa móvil */
+.menu-toggle{width:44px;height:44px;padding:0;border:0;border-radius:0;position:relative;align-items:center;justify-content:center;flex-direction:column;gap:6px;cursor:pointer}
+.menu-toggle span{display:block;width:25px;height:1.5px;background:currentColor;transition:transform .3s ease,opacity .2s ease}
+.menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+@media(max-width:800px){.menu-toggle{display:flex}.site-header nav{max-height:calc(100svh - 64px);overflow:auto}.site-header nav.open{display:flex}}
