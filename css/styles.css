@@ -35,3 +35,39 @@
 .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
 .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
 @media(max-width:800px){.menu-toggle{display:flex}.site-header nav{max-height:calc(100svh - 64px);overflow:auto}.site-header nav.open{display:flex}}
+
+/* V6 — icono hamburguesa móvil de tres líneas claramente visibles */
+@media (max-width:800px){
+  .menu-toggle{
+    display:flex;
+    width:48px;
+    height:48px;
+    padding:0;
+    margin:0;
+    border:0 !important;
+    outline:0;
+    border-radius:0;
+    background:transparent !important;
+    color:#fff;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:6px;
+    -webkit-appearance:none;
+    appearance:none;
+  }
+  .menu-toggle span{
+    display:block !important;
+    width:30px;
+    height:3px;
+    min-height:3px;
+    border-radius:3px;
+    background:#fff !important;
+    opacity:1;
+    transform-origin:center;
+    transition:transform .28s ease,opacity .18s ease;
+  }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+}
