@@ -158,3 +158,14 @@ h1,h2,h3,.legacy-copy h2,.section-head h2{font-family:var(--display);font-weight
 .world-map-panel{background:#000 url('../assets/images/mapa.webp') center center/cover no-repeat}
 .world-map-panel::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.62);z-index:0}
 .world-map-panel .map-wrap{position:relative;z-index:1}
+
+/* V15 — experiencias táctiles en móvil */
+.experience-grid article.active>div.experience-detail{opacity:1;transform:none}
+.experience-grid article.active:after{opacity:1}
+@media(max-width:800px){
+  .experience-grid article{cursor:pointer}
+  .experience-grid article>div.experience-detail{opacity:0;transform:translateY(12px)}
+  .experience-grid article:after{opacity:.42}
+  .experience-grid article.active>div.experience-detail{opacity:1;transform:none}
+  .experience-grid article.active:after{opacity:1}
+}
