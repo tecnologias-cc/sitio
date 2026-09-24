@@ -99,3 +99,62 @@ body.age-locked{overflow:hidden}
 .age-gate__no:hover,.age-gate__no:focus-visible{background:#e6e1d7}
 .age-gate__responsible{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#777268;margin:24px 0 0}
 @media(max-width:480px){.age-gate{padding:14px}.age-gate__panel{width:100%;padding:34px 22px}.age-gate__logo{width:180px;margin-bottom:26px}.age-gate h2{font-size:clamp(32px,10vw,38px)}.age-gate #ageText{font-size:13px;margin-bottom:24px}.age-gate__actions button{min-height:48px}}
+
+
+/* V12 — actualización visual solicitada */
+:root{--display:"Cormorant Garamond",Georgia,serif;--body:"Inter",Arial,sans-serif}
+body{font-family:var(--body);font-weight:300}
+h1,h2,h3,.legacy-copy h2,.section-head h2{font-family:var(--display);font-weight:600}
+.hero-copy--logo{left:clamp(28px,7vw,120px);bottom:clamp(86px,12vh,150px);width:min(42vw,610px);max-width:none}
+.hero-copy--logo img{display:block;width:100%;height:auto;filter:brightness(0) invert(1);opacity:.98}
+.intro-mark img{display:block;width:clamp(24px,2.4vw,38px);height:clamp(28px,3vw,44px);object-fit:contain}
+.brand-grid{grid-template-columns:repeat(4,1fr)}
+.brand-card--valles{background:#eeeae1;display:grid;place-items:center}
+.brand-card--valles:after{background:linear-gradient(0deg,rgba(0,0,0,.10),rgba(0,0,0,.01))}
+.valles-base{position:absolute;inset:0;z-index:2;display:grid;place-items:center;padding:15%;transition:opacity .35s ease}
+.valles-base img{width:min(88%,360px);height:auto;object-fit:contain}
+.brand-card--valles:hover .valles-base,.brand-card--valles.active .valles-base{opacity:.08}
+.card-detail--logo-only{justify-content:center;align-items:center;text-align:center;background:rgba(239,235,226,.94);color:var(--ink)}
+.card-logo--valles{width:min(82%,360px);max-height:none;filter:none!important}
+.world-intro-visual{width:min(100%,1030px);margin:clamp(38px,5vw,70px) auto clamp(40px,5vw,72px)}
+.world-intro-visual img{display:block;width:100%;height:auto}
+.experience-grid article>div.experience-detail{opacity:0;transform:translateY(12px);transition:opacity .35s ease,transform .35s ease}
+.experience-grid article:hover>div.experience-detail,.experience-grid article:focus-within>div.experience-detail{opacity:1;transform:none}
+.experience-grid article:after{background:linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,.08) 70%);opacity:.42;transition:opacity .35s ease}
+.experience-grid article:hover:after,.experience-grid article:focus-within:after{opacity:1}
+.experience-logo{display:block;width:min(270px,72%);max-height:110px;object-fit:contain;object-position:left center;margin:0 0 16px;filter:brightness(0) invert(1)}
+.experience-grid p{font-style:italic;font-weight:300}
+@media(max-width:1100px){.brand-grid{grid-template-columns:repeat(2,1fr)}.hero-copy--logo{width:min(52vw,500px)}}
+@media(max-width:800px){.hero-copy--logo{left:28px;right:auto;bottom:88px;width:min(66vw,330px)}.brand-grid{grid-template-columns:1fr}.world-intro-visual{margin:30px auto 38px}.experience-grid article>div.experience-detail{opacity:1;transform:none}.experience-grid article:after{opacity:1}.experience-logo{width:min(230px,70%)}}
+@media(min-width:1921px){.hero-copy--logo{left:max(140px,calc((100vw - 1920px)/2 + 140px));width:min(34vw,650px)}}
+
+/* V13 — hero limpio, Valles fotográfico y transición al mapa */
+.hero-copy--logo{display:none!important}
+.brand-card--valles{background:#111;display:block}
+.brand-card--valles>img{width:100%;height:100%;object-fit:cover;object-position:center;transition:.55s transform,.45s opacity}
+.brand-card--valles .card-base{display:block}
+.brand-card--valles:hover>img,.brand-card--valles.active>img{transform:scale(1.035);opacity:.72}
+.card-detail--logo-only{background:rgba(0,0,0,.67);color:#fff}
+.card-logo--valles{width:min(82%,360px);max-height:150px;filter:brightness(0) invert(1)!important;object-fit:contain}
+.world-slider{position:relative;min-height:0;height:clamp(650px,72vw,900px);overflow:hidden;background:#000;color:#fff}
+.world-track{height:100%;width:200%;display:flex;transform:translateX(0);transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+.world-slider.show-map .world-track{transform:translateX(-50%)}
+.world-panel{position:relative;width:50%;height:100%;flex:0 0 50%;overflow:hidden}
+.world-panel-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.world-panel-shade{position:absolute;inset:0;background:rgba(0,0,0,.48)}
+.world-cover-copy{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:clamp(50px,8vw,120px) 24px}
+.world-cover-copy h2{font-family:var(--display);font-size:clamp(44px,5vw,78px);font-weight:600;font-style:italic;margin:0 0 32px}
+.world-cover-copy p{max-width:760px;font-style:italic;font-weight:300;font-size:clamp(15px,1.25vw,19px);line-height:1.65;margin:0}
+.world-next{margin-top:58px;width:132px;height:46px;border:1px solid rgba(255,255,255,.75);border-radius:99px;background:rgba(255,255,255,.15);color:#fff;font-size:28px;cursor:pointer;backdrop-filter:blur(4px)}
+.world-next span{display:block;transform:translateX(0);transition:transform .25s}.world-next:hover span{transform:translateX(8px)}
+.world-map-panel{background:#000;display:flex;align-items:center;justify-content:center;padding:clamp(44px,5vw,72px) clamp(18px,5vw,80px)}
+.world-map-panel .map-wrap{width:min(100%,1450px);margin:auto;text-align:center}
+.world-map-panel .map-wrap>img{width:100%;max-height:68vh;object-fit:contain;opacity:1}
+.world-map-panel .country-info{margin-top:18px}.world-map-panel .map-buttons{margin-top:14px}
+.world-back{margin-top:20px;border:0;background:transparent;color:#fff;font:300 12px var(--body);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+@media(max-width:800px){.world-slider{height:clamp(620px,145vw,820px)}.world-cover-copy{padding:60px 28px}.world-cover-copy h2{font-size:clamp(42px,12vw,62px);line-height:1}.world-cover-copy p{font-size:14px;line-height:1.6}.world-next{margin-top:42px;width:112px}.world-map-panel{padding:42px 16px}.world-map-panel .map-wrap>img{max-height:none}.map-buttons{gap:7px}.map-buttons button{font-size:11px;padding:8px 11px}}
+
+/* V14 — conservar mapa.webp como fondo durante la vista del mapa mundial */
+.world-map-panel{background:#000 url('../assets/images/mapa.webp') center center/cover no-repeat}
+.world-map-panel::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.62);z-index:0}
+.world-map-panel .map-wrap{position:relative;z-index:1}
