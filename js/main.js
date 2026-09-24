@@ -26,3 +26,13 @@ const info=document.querySelector('.country-info');document.querySelectorAll('.m
     window.location.href='https://www.google.com/';
   });
 })();
+
+// V13 — transición horizontal entre portada internacional y mapa
+(()=>{
+  const world=document.querySelector('#mundo');
+  const next=document.querySelector('#worldNext');
+  const back=document.querySelector('#worldBack');
+  if(!world||!next||!back)return;
+  next.addEventListener('click',()=>world.classList.add('show-map'));
+  back.addEventListener('click',()=>world.classList.remove('show-map'));
+})();
