@@ -36,3 +36,26 @@ const info=document.querySelector('.country-info');document.querySelectorAll('.m
   next.addEventListener('click',()=>world.classList.add('show-map'));
   back.addEventListener('click',()=>world.classList.remove('show-map'));
 })();
+
+// V15 — tap en móvil para revelar Mezcalogía / Casa Pina
+(()=>{
+  const cards=[...document.querySelectorAll('.experience-grid article')];
+  if(!cards.length)return;
+  cards.forEach(card=>{
+    card.setAttribute('tabindex','0');
+    card.setAttribute('role','button');
+    card.setAttribute('aria-expanded','false');
+    const toggleCard=()=>{
+      if(window.innerWidth>800)return;
+      const willOpen=!card.classList.contains('active');
+      cards.forEach(c=>{c.classList.remove('active');c.setAttribute('aria-expanded','false')});
+      if(willOpen){card.classList.add('active');card.setAttribute('aria-expanded','true')}
+    };
+    card.addEventListener('click',e=>{
+      if(window.innerWidth<=800 && !e.target.closest('a')) toggleCard();
+    });
+    card.addEventListener('keydown',e=>{
+      if(window.innerWidth<=800 && (e.key==='Enter'||e.key===' ')){e.preventDefault();toggleCard()}
+    });
+  });
+})();
